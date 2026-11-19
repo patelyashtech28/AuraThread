@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Wear | AuraThread Luxury & Contemporary Fashion</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        creamBg: '#fcfbf9',
+                        softGray: '#f4f2ee',
+                        charcoalText: '#1c1c1c',
+                        goldAccent: '#c5a059',
+                        goldHover: '#b08d4b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfbf9;
+            color: #1c1c1c;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f4f2ee;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1cbc1;
+            border-radius: 3px;
+        }
+        /* Hide horizontal scrollbar on filter strip */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-creamBg text-charcoalText antialiased selection:bg-goldAccent selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-charcoalText text-white text-xs py-2 px-4 text-center font-medium tracking-wider">
+        <span>✨ Complimentary shipping on orders over ₹1,999 | Use code <strong class="text-goldAccent">AURA20</strong> for 20% off</span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-40 bg-creamBg/90 backdrop-blur-md border-b border-gray-200 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center md:hidden">
+                    <button id="menu-btn" class="text-charcoalText hover:text-goldAccent focus:outline-none p-2 rounded-lg" aria-label="Toggle Menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Brand Logo -->
+                <a href="index.html" class="text-2xl sm:text-3xl font-serif font-bold tracking-tight text-charcoalText flex items-center space-x-2">
+                    <span>Aura<span class="text-goldAccent">Thread</span></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="mens.html" class="nav-link text-sm font-medium hover:text-goldAccent transition-colors">Men's Wear</a>
+                    <a href="womens.html" class="nav-link text-sm font-semibold text-goldAccent border-b-2 border-goldAccent py-1 transition-colors">Women's Wear</a>
+                    <a href="index.html#kids" class="nav-link text-sm font-medium hover:text-goldAccent transition-colors">Kid's Wear</a>
+                    <a href="index.html#footwear" class="nav-link text-sm font-medium hover:text-goldAccent transition-colors">Footwears</a>
+                    <a href="index.html#accessories" class="nav-link text-sm font-medium hover:text-goldAccent transition-colors">Accessories</a>
+                </div>
+
+                <!-- Right Action Icons (Search & Cart) -->
+                <div class="flex items-center space-x-5">
+                    <button onclick="openSearchModal()" class="text-charcoalText hover:text-goldAccent transition-colors p-2" title="Search">
+                        <i class="fa-solid fa-search text-lg"></i>
+                    </button>
+                    <button onclick="toggleCartDrawer()" class="relative text-charcoalText hover:text-goldAccent transition-colors p-2" title="Shopping Cart">
+                        <i class="fa-solid fa-bag-shopping text-xl"></i>
+                        <span id="cart-counter" class="absolute top-0 right-0 w-5 h-5 bg-goldAccent text-white text-xs font-bold rounded-full flex items-center justify-center shadow-sm">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-creamBg border-b border-gray-200 px-6 py-4 space-y-3">
+            <a href="mens.html" class="mobile-link block text-base font-medium py-1 hover:text-goldAccent">Men's Wear</a>
+            <a href="womens.html" class="mobile-link block text-base font-semibold text-goldAccent py-1">Women's Wear</a>
+            <a href="index.html#kids" class="mobile-link block text-base font-medium py-1 hover:text-goldAccent">Kid's Wear</a>
+            <a href="index.html#footwear" class="mobile-link block text-base font-medium py-1 hover:text-goldAccent">Footwears</a>
+            <a href="index.html#accessories" class="mobile-link block text-base font-medium py-1 hover:text-goldAccent">Accessories</a>
+        </div>
+    </nav>
+
+    <!-- Women's Wear Dedicated Hero Banner -->
+    <section class="relative bg-softGray py-14 lg:py-20 overflow-hidden border-b border-gray-200/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Breadcrumb Navigation -->
+            <nav aria-label="Breadcrumb" class="mb-6 flex items-center justify-center lg:justify-start space-x-2 text-xs uppercase tracking-widest text-gray-500">
+                <a href="index.html" class="hover:text-goldAccent transition-colors">Home</a>
+                <span>/</span>
+                <span class="text-charcoalText font-semibold">Women's Wear</span>
+            </nav>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-6 space-y-5 text-center lg:text-left">
+                    <span class="inline-block px-3.5 py-1 rounded-full bg-goldAccent/10 text-goldAccent text-xs font-semibold uppercase tracking-widest">
+                        Women's Atelier • AW '26
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-charcoalText leading-tight">
+                        Women's Wear — <span class="italic text-goldAccent">Effortless Grace</span> & Modern Silhouettes
+                    </h1>
+                    <p class="text-gray-600 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Fluid mulberry silks, softly structured tailoring, and luminous cashmere knits designed to move seamlessly from day to evening.
+                    </p>
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-6 pt-2 text-xs text-gray-500 uppercase tracking-wider">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-feather-pointed text-goldAccent"></i>
+                            <span>Mulberry Silk</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-wand-magic-sparkles text-goldAccent"></i>
+                            <span>Artisan Draping</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-rotate-left text-goldAccent"></i>
+                            <span>30-Day Returns</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl group">
+                        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=900"
+                             alt="AuraThread Women's Editorial Collection"
+                             onerror="this.src='https://placehold.co/900x520/f4f2ee/1c1c1c?text=AuraThread+Womenswear'"
+                             class="w-full h-[320px] sm:h-[400px] object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex items-end justify-between p-6 sm:p-8">
+                            <div class="text-white">
+                                <p class="text-xs uppercase tracking-widest text-goldAccent font-semibold">Evening & Day Edit</p>
+                                <h2 class="text-xl sm:text-2xl font-serif">The Fluid Silk & Cashmere Capsule</h2>
+                            </div>
+                            <a href="#catalog" class="px-4 py-2 bg-white/95 text-charcoalText text-xs font-semibold uppercase tracking-wider rounded-full hover:bg-goldAccent hover:text-white transition-colors">
+                                Explore
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CATALOG CONTAINER -->
+    <main id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+
+        <!-- Filter & Sort Toolbar -->
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-8 mb-8 border-b border-gray-200">
+            <!-- Category Filter Pills -->
+            <div class="flex items-center space-x-2 overflow-x-auto no-scrollbar pb-1" id="category-filters">
+                <button onclick="setCategoryFilter('all')" data-filter="all" class="filter-pill px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-charcoalText text-white transition-all whitespace-nowrap shadow-sm">
+                    All Pieces
+                </button>
+                <button onclick="setCategoryFilter('dresses')" data-filter="dresses" class="filter-pill px-5 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider bg-white border border-gray-200 text-charcoalText hover:border-goldAccent transition-all whitespace-nowrap">
+                    Dresses
+                </button>
+                <button onclick="setCategoryFilter('tops')" data-filter="tops" class="filter-pill px-5 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider bg-white border border-gray-200 text-charcoalText hover:border-goldAccent transition-all whitespace-nowrap">
+                    Tops & Blouses
+                </button>
+                <button onclick="setCategoryFilter('bottoms')" data-filter="bottoms" class="filter-pill px-5 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider bg-white border border-gray-200 text-charcoalText hover:border-goldAccent transition-all whitespace-nowrap">
+                    Trousers & Skirts
+                </button>
+                <button onclick="setCategoryFilter('outerwear')" data-filter="outerwear" class="filter-pill px-5 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider bg-white border border-gray-200 text-charcoalText hover:border-goldAccent transition-all whitespace-nowrap">
+                    Outerwear
+                </button>
+                <button onclick="setCategoryFilter('knitwear')" data-filter="knitwear" class="filter-pill px-5 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider bg-white border border-gray-200 text-charcoalText hover:border-goldAccent transition-all whitespace-nowrap">
+                    Knitwear
+                </button>
+            </div>
+
+            <!-- Item Count, Size Guide Button & Sort Dropdown -->
+            <div class="flex flex-wrap items-center justify-between lg:justify-end gap-3 sm:gap-4">
+                <span id="product-count" class="text-xs text-gray-500 font-medium">Showing 12 items</span>
+                <button onclick="openSizeGuideModal()" class="text-xs font-semibold text-goldAccent hover:text-goldHover underline underline-offset-4 transition-colors">
+                    <i class="fa-solid fa-ruler-horizontal mr-1"></i>Size Guide
+                </button>
+                <div class="relative">
+                    <select id="sort-select" onchange="handleSort(this.value)" aria-label="Sort products" class="appearance-none bg-white border border-gray-300 rounded-xl pl-4 pr-10 py-2.5 text-xs font-medium text-charcoalText focus:outline-none focus:border-goldAccent cursor-pointer shadow-sm">
+                        <option value="featured">Sort: Featured</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="rating">Top Rated</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down text-gray-400 text-xs absolute right-3.5 top-3.5 pointer-events-none"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="womens-product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Dynamic Items Injected via JS -->
+        </div>
+
+        <!-- Editorial Style Spotlight Banner -->
+        <section class="mt-20 bg-softGray rounded-2xl p-8 sm:p-12 border border-gray-200/80 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-7 space-y-4">
+                <span class="text-goldAccent text-xs uppercase tracking-widest font-semibold">Complimentary Atelier Service</span>
+                <h2 class="text-2xl sm:text-3xl font-serif font-bold text-charcoalText">Bespoke Draping & Silhouette Adjustments</h2>
+                <p class="text-gray-600 text-sm sm:text-base leading-relaxed max-w-2xl">
+                    Every AuraThread dress, tailored trouser, and coat includes complimentary hem and waist refinement. Select your preferred size and include tailoring preferences at checkout.
+                </p>
+                <div class="pt-2">
+                    <button onclick="openSizeGuideModal()" class="px-6 py-3 bg-charcoalText text-white text-xs font-semibold uppercase tracking-wider rounded-full hover:bg-goldAccent transition-colors shadow-sm">
+                        View Women's Size Guide
+                    </button>
+                </div>
+            </div>
+            <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+                <div class="bg-white p-5 rounded-xl border border-gray-200/70 text-center">
+                    <i class="fa-solid fa-ruler-combined text-2xl text-goldAccent mb-2"></i>
+                    <h3 class="font-serif font-bold text-base">Graceful Fit</h3>
+                    <p class="text-xs text-gray-500 mt-1">Inclusive XS–XL atelier grading</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200/70 text-center">
+                    <i class="fa-solid fa-award text-2xl text-goldAccent mb-2"></i>
+                    <h3 class="font-serif font-bold text-base">Como Silks</h3>
+                    <p class="text-xs text-gray-500 mt-1">Ethically woven in northern Italy</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- QUICK VIEW & SIZE SELECTION MODAL -->
+    <div id="quick-view-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
+        <div class="bg-creamBg w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden border border-gray-200 relative">
+            <button onclick="closeQuickView()" class="absolute top-4 right-4 z-10 w-9 h-9 bg-white/90 rounded-full flex items-center justify-center text-gray-500 hover:text-charcoalText shadow-sm">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div id="quick-view-content" class="grid grid-cols-1 md:grid-cols-2">
+                <!-- Populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- WOMEN'S SIZE GUIDE MODAL -->
+    <div id="size-guide-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
+        <div class="bg-creamBg w-full max-w-2xl rounded-2xl shadow-2xl p-6 sm:p-8 border border-gray-200 relative">
+            <div class="flex items-center justify-between mb-3">
+                <h3 class="text-xl font-serif font-bold text-charcoalText">Women's Atelier Size Guide</h3>
+                <button onclick="closeSizeGuideModal()" class="text-gray-400 hover:text-charcoalText p-2">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <p class="text-xs text-gray-500 mb-5">Body measurements shown in inches (and centimeters) for XS through XL silhouettes.</p>
+            <div class="overflow-x-auto bg-white rounded-xl border border-gray-200">
+                <table class="w-full text-left text-xs">
+                    <thead class="bg-softGray text-charcoalText uppercase tracking-wider">
+                        <tr>
+                            <th class="py-3 px-4">Size</th>
+                            <th class="py-3 px-4">Bust</th>
+                            <th class="py-3 px-4">Waist</th>
+                            <th class="py-3 px-4">Hips</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100 text-gray-600">
+                        <tr>
+                            <td class="py-3 px-4 font-semibold text-charcoalText">XS (UK 6)</td>
+                            <td class="py-3 px-4">31.5 - 32.5" <span class="text-gray-400">(80-83 cm)</span></td>
+                            <td class="py-3 px-4">24.5 - 25.5" <span class="text-gray-400">(62-65 cm)</span></td>
+                            <td class="py-3 px-4">34.5 - 35.5" <span class="text-gray-400">(88-90 cm)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-semibold text-charcoalText">S (UK 8)</td>
+                            <td class="py-3 px-4">33 - 34" <span class="text-gray-400">(84-86 cm)</span></td>
+                            <td class="py-3 px-4">26 - 27" <span class="text-gray-400">(66-69 cm)</span></td>
+                            <td class="py-3 px-4">36 - 37" <span class="text-gray-400">(91-94 cm)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-semibold text-charcoalText">M (UK 10)</td>
+                            <td class="py-3 px-4">34.5 - 36" <span class="text-gray-400">(88-91 cm)</span></td>
+                            <td class="py-3 px-4">27.5 - 29" <span class="text-gray-400">(70-74 cm)</span></td>
+                            <td class="py-3 px-4">37.5 - 39" <span class="text-gray-400">(95-99 cm)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-semibold text-charcoalText">L (UK 12)</td>
+                            <td class="py-3 px-4">36.5 - 38" <span class="text-gray-400">(93-97 cm)</span></td>
+                            <td class="py-3 px-4">29.5 - 31" <span class="text-gray-400">(75-79 cm)</span></td>
+                            <td class="py-3 px-4">39.5 - 41" <span class="text-gray-400">(100-104 cm)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-semibold text-charcoalText">XL (UK 14)</td>
+                            <td class="py-3 px-4">38.5 - 40.5" <span class="text-gray-400">(98-103 cm)</span></td>
+                            <td class="py-3 px-4">31.5 - 33.5" <span class="text-gray-400">(80-85 cm)</span></td>
+                            <td class="py-3 px-4">41.5 - 43.5" <span class="text-gray-400">(105-110 cm)</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE-OUT CART DRAWER -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity" onclick="toggleCartDrawer()"></div>
+
+        <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-creamBg shadow-2xl flex flex-col">
+                <!-- Drawer Header -->
+                <div class="flex items-center justify-between px-6 py-5 border-b border-gray-200 bg-white">
+                    <h2 class="text-lg font-serif font-bold text-charcoalText flex items-center">
+                        <i class="fa-solid fa-bag-shopping text-goldAccent mr-2"></i> Your Shopping Bag (<span id="cart-item-count">0</span>)
+                    </h2>
+                    <button onclick="toggleCartDrawer()" class="text-gray-400 hover:text-charcoalText p-2 rounded-full">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Cart Items List -->
+                <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4 divide-y divide-gray-100">
+                    <!-- Dynamic Cart Items or Empty State -->
+                </div>
+
+                <!-- Drawer Footer & Checkout -->
+                <div class="border-t border-gray-200 p-6 bg-white space-y-4">
+                    <div class="flex justify-between text-base font-medium text-charcoalText">
+                        <p>Subtotal</p>
+                        <p id="cart-subtotal">₹0</p>
+                    </div>
+                    <p class="text-xs text-gray-500">Complimentary shipping unlocked on orders above ₹1,999.</p>
+                    <button onclick="checkout()" class="w-full py-3.5 bg-charcoalText text-white rounded-xl font-medium hover:bg-goldAccent transition-colors shadow-md">
+                        Proceed to Checkout
+                    </button>
+                    <button onclick="toggleCartDrawer()" class="w-full py-2.5 text-sm text-gray-600 hover:text-charcoalText font-medium">
+                        Continue Shopping
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEARCH MODAL -->
+    <div id="search-modal" class="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-black/60 backdrop-blur-sm hidden">
+        <div class="bg-creamBg w-full max-w-2xl rounded-2xl shadow-2xl p-6 relative border border-gray-200">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-xl font-serif font-bold text-charcoalText">Search Women's Wear</h3>
+                <button onclick="closeSearchModal()" class="text-gray-400 hover:text-charcoalText p-2">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div class="relative mb-6">
+                <i class="fa-solid fa-search absolute left-4 top-3.5 text-gray-400"></i>
+                <input type="text" id="search-input" oninput="handleSearch(this.value)" placeholder="Search silk dresses, blouses, trench coats, cashmere..." class="w-full bg-white border border-gray-300 rounded-xl pl-11 pr-4 py-3 text-charcoalText placeholder-gray-400 focus:outline-none focus:border-goldAccent text-sm shadow-sm">
+            </div>
+            <div id="search-results" class="max-h-96 overflow-y-auto space-y-3">
+                <p class="text-xs text-gray-400 text-center py-6">Type something above to search the Women's collection.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICATION TOAST -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-charcoalText text-white px-6 py-3 rounded-xl shadow-2xl transform translate-y-24 opacity-0 transition-all duration-300 flex items-center space-x-3 text-sm">
+        <i class="fa-solid fa-circle-check text-goldAccent"></i>
+        <span id="toast-message">Item added to your bag</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 text-gray-600 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-serif font-bold text-charcoalText">Aura<span class="text-goldAccent">Thread</span></h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Redefining contemporary luxury through sustainable craftsmanship, timeless aesthetics, and exceptional fabrics.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider text-charcoalText mb-4">Collections</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="mens.html" class="hover:text-goldAccent transition-colors">Men's Wear</a></li>
+                        <li><a href="womens.html" class="text-goldAccent font-medium">Women's Wear</a></li>
+                        <li><a href="index.html#kids" class="hover:text-goldAccent transition-colors">Kid's Wear</a></li>
+                        <li><a href="index.html#footwear" class="hover:text-goldAccent transition-colors">Footwears</a></li>
+                        <li><a href="index.html#accessories" class="hover:text-goldAccent transition-colors">Accessories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider text-charcoalText mb-4">Customer Care</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#" class="hover:text-goldAccent transition-colors">Track Order</a></li>
+                        <li><a href="#" class="hover:text-goldAccent transition-colors">Shipping & Returns</a></li>
+                        <li><button onclick="openSizeGuideModal()" class="hover:text-goldAccent transition-colors">Size Guide</button></li>
+                        <li><a href="#" class="hover:text-goldAccent transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider text-charcoalText mb-4">Newsletter</h4>
+                    <p class="text-sm text-gray-500 mb-4">Subscribe to receive updates, access to exclusive sales, and more.</p>
+                    <form onsubmit="handleNewsletter(event)" class="flex items-center space-x-2">
+                        <input type="email" required placeholder="Enter your email" class="bg-softGray border border-gray-300 rounded-xl px-4 py-2.5 text-sm text-charcoalText focus:outline-none focus:border-goldAccent flex-1">
+                        <button type="submit" class="px-4 py-2.5 bg-charcoalText text-white rounded-xl text-sm font-medium hover:bg-goldAccent transition-colors">Join</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-100 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400">
+                <p>&copy; 2026 AuraThread Luxury Store. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-charcoalText transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-charcoalText transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Curated Women's Wear Catalog
+        const womensProducts = [
+            {
+                id: 'w1',
+                subCategory: 'dresses',
+                categoryLabel: 'Dresses',
+                badge: 'Bestseller',
+                name: 'Silk Wrap Midi Dress',
+                price: 4899,
+                rating: 4.9,
+                reviews: 76,
+                fabric: '100% 19-Momme Mulberry Silk',
+                description: 'Bias-cut wrap silhouette with delicate self-tie waist belt and French seams, creating a luminous drape for evening or daytime occasions.',
+                image: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&q=80&w=600'
+            },
+            {
+                id: 'w2',
+                subCategory: 'tops',
+                categoryLabel: 'Tops & Blouses',
+                badge: 'New Arrival',
+                name: 'Pleated Chiffon Blouse',
+                price: 2199,
+                rating: 4.5,
+                reviews: 31,
+                fabric: 'Recycled Georgette Chiffon',
+                description: 'Airy accordion-pleated front with concealed placket and softly gathered cuffs that layer effortlessly beneath tailored blazers.',
+                image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600'
+            },
+            {
+                id: 'w3',
+                subCategory: 'outerwear',
+                categoryLabel: 'Outerwear',
+                badge: 'Editor’s Pick',
+                name: 'Structured Trench Coat',
+                price: 6499,
+                rating: 5.0,
+                reviews: 88,
+                fabric: 'Organic Double-Faced Cotton Gabardine',
+                description: 'Architectural double-breasted trench with horn-effect buttons, storm welt pockets, and a waist-defining buckle belt.',
+                image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=600'
+            },
+            {
+                id: 'w4',
+                subCategory: 'bottoms',
+                categoryLabel: 'Trousers & Skirts',
+                badge: '',
+                name: 'High-Waist Wide Leg Pants',
+                price: 2799,
+                rating: 4.7,
+                reviews: 45,
+                fabric: 'Fluid Tencel-Wool Twill',
+                description: 'Elongating full-length wide trousers with crisp front press creases and a sculpted high-rise waistband.',
+                image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=600'
+            },
+            {
+                id: 'w5',
+                subCategory: 'dresses',
+                categoryLabel: 'Dresses',
+                badge: 'Limited Edition',
+                name: 'Draped Satin Slip Gown',
+                price: 5699,
+                rating: 4.9,
+                reviews: 54,
+                fabric: 'Heavyweight Italian Silk Satin',
+                description: 'Cowl neckline and adjustable rouleau straps paired with a fluid bias skirt that skims the silhouette with understated glamour.',
+                image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&q=80&w=600'
+            },
+            {
+                id: 'w6',
+                subCategory: 'knitwear',
+                categoryLabel: 'Knitwear',
+                badge: 'Season Essential',
+                name: 'Pure Cashmere Relaxed Turtleneck',
+                price: 4599,
+                rating: 4.9,
+                reviews: 67,
+                fabric: '100% Grade-A Inner Mongolian Cashmere',
+                description: 'Plush 2-ply cashmere sweater featuring dropped shoulders, ribbed collar, and side-slit hem for cozy luxury.',
+                image: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=600'
+            },
+            {
+                id: 'w7',
+                subCategory: 'bottoms',
+                categoryLabel: 'Trousers & Skirts',
+                badge: 'New Arrival',
+                name: 'Bias-Cut Silk Midi Skirt',
+                price: 3199,
+                rating: 4.8,
+                reviews: 41,
+                fabric: '100% Washable Sandwashed Silk',
+                description: 'Clean concealed elastic waist and subtle A-line flare designed to pair seamlessly with chunky knits or crisp shirts.',
+                image: 'https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?auto=format&fit=crop&q=80&w=600'
+            },
+            {
+                id: 'w8',
+                subCategory: 'tops',
+                categoryLabel: 'Tops & Blouses',
+                badge: '',
+                name: 'Sculpted Linen Bustier Top',
+                price: 2499,
+                rating: 4.6,
+                reviews: 29,
+                fabric: '100% European Flax Linen',
+                description: 'Internal boning and smocked back panel offer a tailored corset-inspired fit crafted in breathable natural linen.',
+                image: 'https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&q=80&w=600'
+            },
+            {
+                id: 'w9',
+                subCategory: 'outerwear',
+                categoryLabel: 'Outerwear',
+                badge: 'Bestseller',
+                name: 'Double-Breasted Bouclé Blazer',
+                price: 5299,
+                rating: 4.8,
+                reviews: 52,
+                fabric: 'Textured Cotton-Wool Bouclé',
+                description: 'Tailored hourglass blazer finished with antique gold crest buttons and smooth cupro lining.',
+                image: 'https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&q=80&w=600'
+            },
+            {
+                id: 'w10',
+                subCategory: 'knitwear',
+                categoryLabel: 'Knitwear',
+                badge: '',
+                name: 'Merino Ribbed Wrap Cardigan',
+                price: 3299,
+                rating: 4.7,
+                reviews: 36,
+                fabric: '100% Fine Australian Merino Wool',
+                description: 'Ballet-inspired tie-front cardigan in a flattering fine rib stitch that transitions effortlessly across seasons.',
+                image: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&q=80&w=600'
+            },
+            {
+                id: 'w11',
+                subCategory: 'dresses',
+                categoryLabel: 'Dresses',
+                badge: '',
+                name: 'Belted Linen Shirt Dress',
+                price: 3699,
+                rating: 4.7,
+                reviews: 48,
+                fabric: 'Washed Belgian Linen-Cotton',
+                description: 'Relaxed utilitarian shirt dress with roll-tab sleeves, side-seam pockets, and removable D-ring waist belt.',
+                image: 'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&q=80&w=600'
+            },
+            {
+                id: 'w12',
+                subCategory: 'tops',
+                categoryLabel: 'Tops & Blouses',
+                badge: 'Atelier Favorite',
+                name: 'Draped Silk Cowl Camisole',
+                price: 2599,
+                rating: 4.9,
+                reviews: 61,
+                fabric: '100% Como Mulberry Silk',
+                description: 'Double-layered front silk camisole with fluid cowl neckline—an indispensable foundation piece for day-to-night dressing.',
+                image: 'https://images.unsplash.com/photo-1564257631407-4deb1f99d992?auto=format&fit=crop&q=80&w=600'
+            }
+        ];
+
+        // Available sizes for Women's Wear
+        const availableSizes = ['XS', 'S', 'M', 'L', 'XL'];
+
+        // State
+        let activeCategory = 'all';
+        let currentSort = 'featured';
+        let selectedSizes = {}; // Tracks selected size per product card (default 'M')
+        let cart = [];
+
+        // Initialize default sizes
+        womensProducts.forEach(p => {
+            selectedSizes[p.id] = 'M';
+        });
+
+        // Filter & Sort Logic
+        function getFilteredAndSortedProducts() {
+            let list = activeCategory === 'all'
+                ? [...womensProducts]
+                : womensProducts.filter(p => p.subCategory === activeCategory);
+
+            if (currentSort === 'price-asc') {
+                list.sort((a, b) => a.price - b.price);
+            } else if (currentSort === 'price-desc') {
+                list.sort((a, b) => b.price - a.price);
+            } else if (currentSort === 'rating') {
+                list.sort((a, b) => b.rating - a.rating);
+            }
+            return list;
+        }
+
+        // Render Product Cards
+        function renderWomensGrid() {
+            const container = document.getElementById('womens-product-grid');
+            const items = getFilteredAndSortedProducts();
+
+            document.getElementById('product-count').textContent = `Showing ${items.length} ${items.length === 1 ? 'item' : 'items'}`;
+
+            container.innerHTML = items.map(product => {
+                const currentSize = selectedSizes[product.id] || 'M';
+                return `
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div class="relative overflow-hidden bg-gray-100 aspect-[4/5]">
+                        <img src="${product.image}" alt="${product.name}"
+                             onerror="this.src='https://placehold.co/600x750/f4f2ee/1c1c1c?text=AuraThread+Womens'"
+                             class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 cursor-pointer"
+                             onclick="openQuickView('${product.id}')">
+
+                        ${product.badge ? `
+                            <span class="absolute top-3.5 left-3.5 px-3 py-1 bg-white/95 backdrop-blur-sm text-charcoalText text-[11px] font-semibold uppercase tracking-wider rounded-full shadow-sm">
+                                ${product.badge}
+                            </span>
+                        ` : ''}
+
+                        <!-- Quick View & Quick Add Floating Actions -->
+                        <div class="absolute bottom-4 right-4 flex items-center space-x-2 transform translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                            <button onclick="openQuickView('${product.id}')" class="w-10 h-10 bg-white text-charcoalText rounded-full shadow-lg flex items-center justify-center hover:bg-charcoalText hover:text-white transition-colors" title="Quick View">
+                                <i class="fa-regular fa-eye text-sm"></i>
+                            </button>
+                            <button onclick="addToCart('${product.id}')" class="w-10 h-10 bg-white text-charcoalText rounded-full shadow-lg flex items-center justify-center hover:bg-goldAccent hover:text-white transition-colors" title="Quick Add">
+                                <i class="fa-solid fa-plus text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="p-5 flex flex-col flex-1 justify-between">
+                        <div>
+                            <div class="flex items-center justify-between text-xs mb-1.5">
+                                <span class="text-goldAccent font-medium uppercase tracking-wider text-[11px]">${product.categoryLabel}</span>
+                                <div class="flex items-center space-x-1 text-amber-500">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span class="font-medium text-gray-700">${product.rating}</span>
+                                    <span class="text-gray-400">(${product.reviews})</span>
+                                </div>
+                            </div>
+                            <h3 onclick="openQuickView('${product.id}')" class="text-base font-medium text-charcoalText mb-1 hover:text-goldAccent transition-colors cursor-pointer">${product.name}</h3>
+                            <p class="text-lg font-serif font-bold text-charcoalText">₹${product.price.toLocaleString()}</p>
+
+                            <!-- Inline XS-XL Size Selector -->
+                            <div class="flex items-center space-x-1 mt-3">
+                                <span class="text-[11px] text-gray-400 mr-1">Size:</span>
+                                ${availableSizes.map(size => `
+                                    <button onclick="selectCardSize('${product.id}', '${size}')"
+                                            class="w-7 h-7 rounded-lg text-[11px] font-medium border transition-all ${currentSize === size ? 'bg-charcoalText text-white border-charcoalText' : 'bg-creamBg text-gray-600 border-gray-200 hover:border-goldAccent'}">
+                                        ${size}
+                                    </button>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <button onclick="addToCart('${product.id}')" class="mt-4 w-full py-2.5 bg-softGray text-charcoalText rounded-xl font-medium text-sm hover:bg-charcoalText hover:text-white transition-colors">
+                            Add to Bag
+                        </button>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+
+        // Select size on product card
+        function selectCardSize(productId, size) {
+            selectedSizes[productId] = size;
+            renderWomensGrid();
+        }
+
+        // Category Filter Switch
+        function setCategoryFilter(category) {
+            activeCategory = category;
+            document.querySelectorAll('.filter-pill').forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.className = 'filter-pill px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-charcoalText text-white transition-all whitespace-nowrap shadow-sm';
+                } else {
+                    btn.className = 'filter-pill px-5 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider bg-white border border-gray-200 text-charcoalText hover:border-goldAccent transition-all whitespace-nowrap';
+                }
+            });
+            renderWomensGrid();
+        }
+
+        // Sort Handler
+        function handleSort(sortValue) {
+            currentSort = sortValue;
+            renderWomensGrid();
+        }
+
+        // Quick View Modal
+        function openQuickView(productId) {
+            const product = womensProducts.find(p => p.id === productId);
+            if (!product) return;
+
+            const currentSize = selectedSizes[product.id] || 'M';
+            const content = document.getElementById('quick-view-content');
+
+            content.innerHTML = `
+                <div class="bg-gray-100 aspect-[4/5] md:aspect-auto md:h-full">
+                    <img src="${product.image}" alt="${product.name}"
+                         onerror="this.src='https://placehold.co/600x750/f4f2ee/1c1c1c?text=AuraThread'"
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="p-6 sm:p-8 flex flex-col justify-between space-y-5">
+                    <div class="space-y-3">
+                        <span class="text-xs uppercase tracking-widest text-goldAccent font-semibold">${product.categoryLabel}</span>
+                        <h2 class="text-2xl font-serif font-bold text-charcoalText">${product.name}</h2>
+                        <div class="flex items-center space-x-3">
+                            <p class="text-2xl font-serif font-bold text-charcoalText">₹${product.price.toLocaleString()}</p>
+                            <span class="text-xs text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full font-medium">
+                                <i class="fa-solid fa-star mr-1"></i>${product.rating} (${product.reviews} reviews)
+                            </span>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed pt-2">${product.description}</p>
+                        <div class="pt-2 border-t border-gray-200/80 text-xs text-gray-500">
+                            <strong class="text-charcoalText">Composition:</strong> ${product.fabric}
+                        </div>
+
+                        <!-- Size Picker in Modal -->
+                        <div class="pt-3">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-charcoalText">Select Size</span>
+                                <button onclick="closeQuickView(); openSizeGuideModal();" class="text-xs text-goldAccent underline hover:text-goldHover">Size Guide</button>
+                            </div>
+                            <div class="grid grid-cols-5 gap-2" id="modal-size-options">
+                                ${availableSizes.map(size => `
+                                    <button onclick="selectModalSize('${product.id}', '${size}')"
+                                            class="py-2.5 rounded-xl text-xs font-semibold border transition-all ${currentSize === size ? 'bg-charcoalText text-white border-charcoalText' : 'bg-white text-charcoalText border-gray-300 hover:border-goldAccent'}">
+                                        ${size}
+                                    </button>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="addToCart('${product.id}'); closeQuickView();" class="w-full py-3.5 bg-charcoalText text-white rounded-xl font-medium hover:bg-goldAccent transition-colors shadow-md">
+                        Add to Shopping Bag — ₹${product.price.toLocaleString()}
+                    </button>
+                </div>
+            `;
+
+            document.getElementById('quick-view-modal').classList.remove('hidden');
+        }
+
+        function selectModalSize(productId, size) {
+            selectedSizes[productId] = size;
+            renderWomensGrid();
+            openQuickView(productId);
+        }
+
+        function closeQuickView() {
+            document.getElementById('quick-view-modal').classList.add('hidden');
+        }
+
+        // Size Guide Modal
+        function openSizeGuideModal() {
+            document.getElementById('size-guide-modal').classList.remove('hidden');
+        }
+
+        function closeSizeGuideModal() {
+            document.getElementById('size-guide-modal').classList.add('hidden');
+        }
+
+        // Shopping Cart Functions
+        function addToCart(productId) {
+            const product = womensProducts.find(p => p.id === productId);
+            if (!product) return;
+
+            const size = selectedSizes[productId] || 'M';
+            const cartKey = `${productId}-${size}`;
+
+            const existingItem = cart.find(item => item.cartKey === cartKey);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ ...product, size, cartKey, quantity: 1 });
+            }
+
+            updateCartUI();
+            showToast(`Added "${product.name}" (Size ${size}) to your bag`);
+        }
+
+        function removeFromCart(cartKey) {
+            cart = cart.filter(item => item.cartKey !== cartKey);
+            updateCartUI();
+        }
+
+        function updateQuantity(cartKey, change) {
+            const item = cart.find(item => item.cartKey === cartKey);
+            if (!item) return;
+
+            item.quantity += change;
+            if (item.quantity <= 0) {
+                removeFromCart(cartKey);
+            } else {
+                updateCartUI();
+            }
+        }
+
+        function updateCartUI() {
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            document.getElementById('cart-counter').textContent = totalCount;
+            document.getElementById('cart-item-count').textContent = totalCount;
+            document.getElementById('cart-subtotal').textContent = `₹${subtotal.toLocaleString()}`;
+
+            const container = document.getElementById('cart-items-container');
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-16">
+                        <i class="fa-solid fa-bag-shopping text-4xl text-gray-300 mb-4"></i>
+                        <p class="text-gray-500 font-medium">Your shopping bag is empty.</p>
+                        <p class="text-xs text-gray-400 mt-1">Explore our Women's Atelier and add your favorites.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = cart.map(item => `
+                <div class="flex items-center space-x-4 py-4">
+                    <img src="${item.image}" alt="${item.name}" class="w-20 h-24 object-cover rounded-xl border border-gray-200">
+                    <div class="flex-1">
+                        <h4 class="text-sm font-medium text-charcoalText">${item.name}</h4>
+                        <p class="text-xs text-gray-500 mt-0.5">Size: <span class="font-semibold text-charcoalText">${item.size}</span></p>
+                        <p class="text-sm font-serif font-bold text-charcoalText mt-1">₹${item.price.toLocaleString()}</p>
+                        <div class="flex items-center space-x-3 mt-2">
+                            <div class="flex items-center border border-gray-300 rounded-lg overflow-hidden bg-white">
+                                <button onclick="updateQuantity('${item.cartKey}', -1)" class="px-2.5 py-1 text-gray-500 hover:bg-gray-100">-</button>
+                                <span class="px-3 text-xs font-medium">${item.quantity}</span>
+                                <button onclick="updateQuantity('${item.cartKey}', 1)" class="px-2.5 py-1 text-gray-500 hover:bg-gray-100">+</button>
+                            </div>
+                            <button onclick="removeFromCart('${item.cartKey}')" class="text-gray-400 hover:text-red-500 text-xs transition-colors">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleCartDrawer() {
+            document.getElementById('cart-drawer').classList.toggle('hidden');
+        }
+
+        // Search Modal
+        function openSearchModal() {
+            document.getElementById('search-modal').classList.remove('hidden');
+            document.getElementById('search-input').focus();
+        }
+
+        function closeSearchModal() {
+            document.getElementById('search-modal').classList.add('hidden');
+        }
+
+        function handleSearch(query) {
+            const resultsContainer = document.getElementById('search-results');
+            if (!query.trim()) {
+                resultsContainer.innerHTML = '<p class="text-xs text-gray-400 text-center py-6">Type something above to search the Women\'s collection.</p>';
+                return;
+            }
+
+            const matched = womensProducts.filter(p =>
+                p.name.toLowerCase().includes(query.toLowerCase()) ||
+                p.categoryLabel.toLowerCase().includes(query.toLowerCase()) ||
+                p.fabric.toLowerCase().includes(query.toLowerCase())
+            );
+
+            if (matched.length === 0) {
+                resultsContainer.innerHTML = '<p class="text-sm text-gray-500 text-center py-6">No matching items found in Women\'s Wear.</p>';
+                return;
+            }
+
+            resultsContainer.innerHTML = matched.map(product => `
+                <div class="flex items-center justify-between p-3 rounded-xl hover:bg-white border border-transparent hover:border-gray-200 transition-all cursor-pointer" onclick="closeSearchModal(); openQuickView('${product.id}');">
+                    <div class="flex items-center space-x-3">
+                        <img src="${product.image}" class="w-12 h-14 object-cover rounded-lg">
+                        <div>
+                            <h4 class="text-sm font-medium text-charcoalText">${product.name}</h4>
+                            <span class="text-xs text-goldAccent">${product.categoryLabel} • ${product.fabric}</span>
+                        </div>
+                    </div>
+                    <span class="text-sm font-serif font-bold text-charcoalText">₹${product.price.toLocaleString()}</span>
+                </div>
+            `).join('');
+        }
+
+        // Checkout
+        function checkout() {
+            if (cart.length === 0) return;
+            showToast('Redirecting to secure checkout...');
+            setTimeout(() => {
+                cart = [];
+                updateCartUI();
+                toggleCartDrawer();
+                showToast('Order placed successfully! Thank you for shopping with AuraThread.');
+            }, 1400);
+        }
+
+        // Toast Notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = message;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3500);
+        }
+
+        // Newsletter
+        function handleNewsletter(event) {
+            event.preventDefault();
+            showToast('Thank you for subscribing to AuraThread.');
+            event.target.reset();
+        }
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Initialize Page
+        window.addEventListener('DOMContentLoaded', () => {
+            renderWomensGrid();
+            updateCartUI();
+        });
+    </script>
+</body>
+</html>
